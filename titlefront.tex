@@ -1,0 +1,30 @@
+\makeatletter
+\newcommand{\institution}[1]{\gdef\@institution{#1}}
+\newcommand{\city}[1]{\gdef\@city{#1}}
+\newcommand{\subtitle}[1]{\gdef\@subtitle{#1}}
+\renewcommand{\@maketitle}{%
+  \let\footnote\@mem@titlefootkill
+  \ifdim\pagetotal>\z@
+    \newpage
+  \fi
+  \null
+  {\begin{center}\@institution \par\end{center}\vfill}
+  {\begin{center}\lineskip .5em \begin{tabular}[t]{c} \@author \end{tabular}\par\end{center}}
+  {\begin{center}\LARGE \@title \par\end{center}}
+  {\begin{center}\@subtitle \par\end{center}\vfill\vfill}
+  {\begin{center}\@city\\\@date \par\end{center}}
+  \par}
+\makeatother
+
+\begin{titlingpage}
+\institution{Санкт-Петербургский политехнический университет Петра Великого\\ %
+Институт прикладной математики и механики\\ %
+Кафедра <<Прикладная математика>> %
+}
+\title{Алгоритмы и алгоритмические языки}
+\subtitle{Лабораторный практикум}
+\author{П.\,О.~Смирнов\texorpdfstring{\and}{,} А.\,Б.~Терентьев}
+\city{Санкт-Петербург}
+\date{2015\thanks{\today}}
+\maketitle
+\end{titlingpage}
