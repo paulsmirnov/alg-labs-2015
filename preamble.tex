@@ -21,6 +21,8 @@
 % Other packages (before hyperref)
 
 \usepackage{microtype}
+\usepackage{alltt}
+\usepackage[outputdir=_aux]{minted}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Hyperref should be (almost) the last
@@ -35,3 +37,35 @@
 % Definitions
 
 \newcommand{\chapterBARE}[1]{\chapter*{#1}\addcontentsline{toc}{chapter}{#1}}
+
+\newcounter{zztask}
+\newcommand{\zztaskgroup}[2]{%
+  \gdef\thezztaskgroup{#1}%
+  \setcounter{zztask}{0}%
+  \section*{Задание \texttt{#1}\\#2}%
+  \addcontentsline{toc}{section}{Задание \texttt{#1}: #2}%
+}
+\renewcommand{\thezztask}{\thezztaskgroup--\arabic{zztask}}
+
+\newlength{\currentparskip}
+\newlength{\currentparindent}
+
+\newenvironment{zztask}[1][]{%
+\stepcounter{zztask}%
+\medbreak\noindent%
+\setlength{\currentparskip}{\parskip}%
+\setlength{\currentparindent}{\parindent}%
+\begin{minipage}{\textwidth}%
+\setlength{\parskip}{\currentparskip}%
+\setlength{\parindent}{\currentparindent}%
+\noindent\textbf{Вариант~\thezztask}\ifx\\#1\\\else\ (#1)\fi.
+}{%
+\end{minipage}%
+\medbreak%
+}
+
+\newenvironment{zzoutput}{\begin{alltt}}{\end{alltt}}
+\newcommand{\zzuser}[1]{\textbf{\underline{#1}}}
+
+\usemintedstyle{vs} % bw
+\setminted{xleftmargin=1.0cm} % ,fontsize=\footnotesize}
