@@ -50,6 +50,7 @@
 
 \newcounter{zztask}
 \newcommand{\zztaskgroup}[2]{%
+  \clearpage%
   \gdef\thezztaskgroup{#1}%
   \setcounter{zztask}{0}%
   \section*{Задание \texttt{#1}\\#2}%
