@@ -28,6 +28,14 @@
 \usepackage{needspace}
 \newcommand{\zzneedspace}[1][5]{\needspace{#1\baselineskip}}
 
+\usepackage{titlesec} % not compatible with memoir class?
+\titleformat{\chapter}[display]{\Large\bfseries}{\centering\chaptertitlename\ \thechapter}{0pt}{\centering}[]
+\titlespacing{\chapter}{0pt}{*0}{*10}
+\titleformat{\section}[block]{\large\bfseries}{\thesection.}{1ex}{\centering}[]
+\titlespacing{\section}{0pt}{*6}{*2}
+\titleformat{\subsection}[block]{\bfseries}{\thesubsection.}{0pt}{\centering}[]
+\titlespacing{\subsection}{0pt}{*6}{*2}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Hyperref should be (almost) the last
 
@@ -35,7 +43,7 @@
   colorlinks,
   citecolor=blue,
   bookmarksnumbered=true,
-  % pdfpagelayout=TwoPageRight,
+  pdfpagelayout=TwoPageRight,
   pdfusetitle,
 ]{hyperref}
 
@@ -54,7 +62,7 @@
   \gdef\thezztaskgroup{#1}%
   \setcounter{zztask}{0}%
   \section*{Задание \texttt{#1}\\#2}%
-  \addcontentsline{toc}{section}{Задание \texttt{#1}: #2}%
+  \addcontentsline{toc}{section}{\texttt{#1}: #2}%
 }
 \renewcommand{\thezztask}{\thezztaskgroup--\arabic{zztask}}
 
