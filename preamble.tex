@@ -56,13 +56,16 @@
 
 \newcommand{\chapterBARE}[1]{\chapter*{#1}\addcontentsline{toc}{chapter}{#1}}
 
+\newenvironment{zztaskchapters}
+  {\setcounter{secnumdepth}{0}}
+  {\setcounter{secnumdepth}{2}}
+
 \newcounter{zztask}
 \newcommand{\zztaskgroup}[2]{%
   \clearpage%
   \gdef\thezztaskgroup{#1}%
   \setcounter{zztask}{0}%
-  \section*{Задание \texttt{#1}\\#2}%
-  \addcontentsline{toc}{section}{\texttt{#1}: #2}%
+  \section[\texttt{#1}: #2]{\texorpdfstring{Задание \texttt{#1}\\#2}{\texttt{#1}: #2}}%
 }
 \renewcommand{\thezztask}{\thezztaskgroup--\arabic{zztask}}
 
