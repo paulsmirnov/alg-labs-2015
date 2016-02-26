@@ -60,6 +60,10 @@
   {\setcounter{secnumdepth}{0}}
   {\setcounter{secnumdepth}{2}}
 
+\newcommand{\zzsectionCOMMENTS}{\subsection{Комментарии к задаче}}
+\newcommand{\zzsectionPLAN}{\subsection{План решения}}
+\newcommand{\zzsectionVARIATIONS}{\subsection{Варианты}}
+
 \newcounter{zztask}
 \newcommand{\zztaskgroup}[2]{%
   \clearpage%
@@ -92,6 +96,7 @@
 \newcommand{\zztodo}[1]{\footnote{#1}\marginnote[\hfill\color{red}\raisebox{-2pt}{\Large\bfseries !!!} $\Rightarrow$]{\color{red}$\Leftarrow$ \raisebox{-2pt}{\Large\bfseries !!!}}}
 
 \usemintedstyle{vs} % bw
-\setminted{xleftmargin=1.0cm,fontsize=\footnotesize}
+\setminted{xleftmargin=1.25cm,fontsize=\footnotesize}
 
 \setSpacing{1.2}
+\setlength{\parindent}{1.25cm}
