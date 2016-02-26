@@ -7,7 +7,7 @@
 % Document and page settings
 
 \documentclass[12pt,a4paper]{memoir}
-\usepackage[margin=2cm,left=3cm]{geometry}
+\usepackage[margin=2cm,left=2cm]{geometry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Russian language
@@ -24,6 +24,8 @@
 \usepackage{alltt}
 \usepackage[outputdir=_aux]{minted}
 \usepackage{marginnote}
+\usepackage{textcomp}
+%\usepackage{showframe}
 
 \usepackage{needspace}
 \newcommand{\zzneedspace}[1][5]{\needspace{#1\baselineskip}}
@@ -98,5 +100,7 @@
 \usemintedstyle{vs} % bw
 \setminted{xleftmargin=1.25cm,fontsize=\footnotesize}
 
-\setSpacing{1.2}
+\setSpacing{1} % it is set to 1.2 after the title page
 \setlength{\parindent}{1.25cm}
+
+%\renewcommand{\rmdefault}{ftm}

@@ -1,4 +1,7 @@
+\setSpacing{1}
+
 \makeatletter
+\newcommand{\ministry}[1]{\gdef\@ministry{#1}}
 \newcommand{\institution}[1]{\gdef\@institution{#1}}
 \newcommand{\city}[1]{\gdef\@city{#1}}
 \newcommand{\subtitle}[1]{\gdef\@subtitle{#1}}
@@ -8,23 +11,80 @@
     \newpage
   \fi
   \null
-  {\begin{center}\@institution \par\end{center}\vfill}
-  {\begin{center}\lineskip .5em \begin{tabular}[t]{c} \@author \end{tabular}\par\end{center}}
-  {\begin{center}\LARGE \@title \par\end{center}}
-  {\begin{center}\@subtitle \par\end{center}\vfill\vfill}
-  {\begin{center}\@city\\\@date \par\end{center}}
+  {\begin{center}\textbf{\@ministry}\\\rule{2cm}{1pt}\\[.5em] %
+  \textbf{\MakeUppercase{\@institution}}\\\rule{\textwidth}{1pt}\end{center}}
+  {\begin{center}\textbf{\textit{\MakeUppercase{\@author}}} \par\end{center}\vfill}
+  {\begin{center}\Large\textbf{\MakeUppercase{\@title}} \par\end{center}}
+  {\begin{center}\vskip.5cm \large\textbf{\textit{\@subtitle}} \par\end{center}\vfill\vfill}
+  {\begin{center}\textbf{\@city\\\@date} \par\end{center}}
   \par}
 \makeatother
 
 \begin{titlingpage}
-\institution{Санкт-Петербургский политехнический университет Петра Великого\\ %
-Институт прикладной математики и механики\\ %
-Кафедра <<Прикладная математика>> %
-}
+\let\cleardoublepage\clearpage
+\ministry{Министерство образования и науки Российской Федерации}
+\institution{Санкт-Петербургский политехнический\protect\\ университет Петра Великого}
 \title{Алгоритмы и алгоритмические языки}
 \subtitle{Лабораторный практикум}
-\author{П.\,О.~Смирнов\texorpdfstring{\and}{,} А.\,Б.~Терентьев}
-\city{Санкт-Петербург}
-\date{2015\thanks{\today}}
+\author{П.\,О.~Смирнов, А.\,Б.~Терентьев}
+\city{Санкт-Петербург\\%
+Издательство Политехнического университета%
+}
+\date{2016}%\thanks{\today}}
 \maketitle
+\end{titlingpage}
+
+\setSpacing{1.2}
+
+\begin{titlingpage}
+\let\cleardoublepage\clearpage
+\noindent
+\begin{tabular}{ll}
+УДК & 004.424 (076.5)\\
+ББК & 32.973я73\\
+    & С~506 \\
+\end{tabular}
+
+\vskip1cm
+
+\makeatletter
+\textit{Смирнов П.~О.} \textbf{\@title}: \MakeLowercase{\@subtitle}~/ \@author.~---
+СПб.: Изд-во Политехн. ун-та, 2016.~--- 000~с.
+\makeatother
+\vskip.5cm
+
+Пособие соответствует 
+% государственному образовательному стандарту общепрофессиональной дисциплины <<Основы алгоритмизации и программирования>>
+содержанию разделов основной образовательной программы <<Алгоритмы и алгоритмические языки>>
+подготовки бакалавров по направлению 01.03.02 (010400) <<Прикладная математика
+и информатика>>.
+
+Рассматривается язык программирования Си. Главное внимание уделено\dots
+
+Пособие предназначено студентам первого курса Политехнического университета.
+Рекомендуется также студентам младших курсов других университетов, институтов
+и учащимся средних учебных заведений. Кроме того, пособие будет полезно
+преподавателям в качестве задачника.
+
+Научная специальность 05.13.18~--- Математическое моделирование, численные
+методы и комплексы программ.
+
+\vskip.5cm
+
+Табл. 0, Ил. 0, Библиогр.: 0 назв.
+
+\vskip.5cm
+
+Печатается по решению Совета по издательской деятельности Учёного совета
+Санкт-Петербургского политехнического университета Петра Великого.
+
+\vfill
+
+\noindent
+\begin{tabular}{p{0.45\textwidth}p{0.5\textwidth}}
+                                & \textcopyright\ Смирнов П.~О., Терентьев А.~Б., 2016\\
+                                & \textcopyright\ Санкт-Петербургский политехнический\\
+\textbf{ISBN 978-5-7422-0???-?} & \quad\ \ университет Петра Великого, 2016\\
+\end{tabular}
+
 \end{titlingpage}
