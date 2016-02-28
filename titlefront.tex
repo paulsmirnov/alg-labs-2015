@@ -1,27 +1,12 @@
+\makeatletter
+
 \setSpacing{1}
 
-\makeatletter
 \newcommand{\ministry}[1]{\gdef\@ministry{#1}}
 \newcommand{\institution}[1]{\gdef\@institution{#1}}
 \newcommand{\city}[1]{\gdef\@city{#1}}
 \newcommand{\subtitle}[1]{\gdef\@subtitle{#1}}
-\renewcommand{\@maketitle}{%
-  \let\footnote\@mem@titlefootkill
-  \ifdim\pagetotal>\z@
-    \newpage
-  \fi
-  \null
-  {\begin{center}\textbf{\@ministry}\\\rule{2cm}{1pt}\\[.5em] %
-  \textbf{\MakeUppercase{\@institution}}\\\rule{\textwidth}{1pt}\end{center}}
-  {\begin{center}\textbf{\textit{\MakeUppercase{\@author}}} \par\end{center}\vfill}
-  {\begin{center}\Large\textbf{\MakeUppercase{\@title}} \par\end{center}}
-  {\begin{center}\vskip.5cm \large\textbf{\textit{\@subtitle}} \par\end{center}\vfill\vfill}
-  {\begin{center}\textbf{\@city\\\@date} \par\end{center}}
-  \par}
-\makeatother
 
-\begin{titlingpage}
-\let\cleardoublepage\clearpage
 \ministry{Министерство образования и науки Российской Федерации}
 \institution{Санкт-Петербургский политехнический\protect\\ университет Петра Великого}
 \title{Алгоритмы и алгоритмические языки}
@@ -31,31 +16,79 @@
 Издательство Политехнического университета%
 }
 \date{2016}%\thanks{\today}}
-\maketitle
-\end{titlingpage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\thispagestyle{title}
+
+\begin{center}
+\textbf{\@ministry}\\
+\rule{2cm}{1pt}\\[.5em]
+\textbf{\MakeUppercase{\@institution}}\\
+\rule{\textwidth}{1pt}
+\end{center}
+
+\begin{center}
+\textbf{\textit{\MakeUppercase{\@author}}}
+\end{center}
+
+\vfill
+
+\begin{center}
+\large\textbf{\MakeUppercase{\@title}}
+\end{center}
+
+\vskip.5cm
+\begin{center}
+\large\textbf{\textit{\@subtitle}}
+\end{center}
+
+\vfill\vfill
+
+\begin{center}
+\textbf{\@city\\\@date}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setSpacing{1.2}
 
-\begin{titlingpage}
-\let\cleardoublepage\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+\thispagestyle{title}
+
+% УДК (http://teacode.com/online/udc/)
+% 004.424 - Методы программирования
+% 519.6   - Вычислительная математика. Численный анализ
+% (076.5) - Практические упражнения. Практикумы. Лабораторные работы
+% (075.8) - Учебники и учебные пособия для высших учебных заведений, университетов, институтов, академий и т.п.
+
+% ББК (http://lbc.rsl.ru/treeuse.php)
+% 32.973  - ТЕХНИКА. ТЕХНИЧЕСКИЕ НАУКИ. / Радиоэлектроника. / Вычислительная техника. Программирование. / Программирование
+% я73     - Учебные издания для вузов
+
+% Авторский знак (http://lit100.ru/znak.php)
+% С506    - "См" / "Смирн"
+
 \noindent
 \begin{tabular}{ll}
-УДК & 004.424 (076.5)\\
+УДК & 004.424:519.6 (076.5)\\
 ББК & 32.973я73\\
-    & С~506 \\
+    & С506 \\
 \end{tabular}
 
 \vskip1cm
 
-\makeatletter
 \textit{Смирнов П.~О.} \textbf{\@title}: \MakeLowercase{\@subtitle}~/ \@author.~---
-СПб.: Изд-во Политехн. ун-та, 2016.~--- 000~с.
-\makeatother
-\vskip.5cm
+СПб.: Изд-во Политехн. ун-та, 2016.~--- \hl{000}~с.
+\vskip1cm
 
 Пособие соответствует 
 % государственному образовательному стандарту общепрофессиональной дисциплины <<Основы алгоритмизации и программирования>>
-содержанию разделов основной образовательной программы <<Алгоритмы и алгоритмические языки>>
+% содержанию разделов основной образовательной программы <<Алгоритмы и алгоритмические языки>>
+содержанию разделов дисциплины <<Алгоритмы и алгоритмические языки>>
 подготовки бакалавров по направлению 01.03.02 (010400) <<Прикладная математика
 и информатика>>.
 
@@ -69,11 +102,11 @@
 Научная специальность 05.13.18~--- Математическое моделирование, численные
 методы и комплексы программ.
 
-\vskip.5cm
+\vskip1cm
 
-Табл. 0, Ил. 0, Библиогр.: 0 назв.
+Табл.~\hl{0}, Ил.~\hl{0}, Библиогр.:~\hl{0} назв.
 
-\vskip.5cm
+\vskip1cm
 
 Печатается по решению Совета по издательской деятельности Учёного совета
 Санкт-Петербургского политехнического университета Петра Великого.
@@ -81,10 +114,12 @@
 \vfill
 
 \noindent
-\begin{tabular}{p{0.45\textwidth}p{0.5\textwidth}}
+\begin{tabular}{p{0.35\textwidth}p{0.6\textwidth}}
                                 & \textcopyright\ Смирнов П.~О., Терентьев А.~Б., 2016\\
                                 & \textcopyright\ Санкт-Петербургский политехнический\\
-\textbf{ISBN 978-5-7422-0???-?} & \quad\ \ университет Петра Великого, 2016\\
+\textbf{ISBN 5-7422-0\hl{???-?}} & \quad\ \ университет Петра Великого, 2016\\
 \end{tabular}
 
-\end{titlingpage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatother

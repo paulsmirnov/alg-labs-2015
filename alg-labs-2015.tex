@@ -1,25 +1,74 @@
 \input{preamble}
 
+\settypeblocksize{240mm}{160mm}{*}
+\setlrmargins{*}{*}{1}
+\setulmargins{*}{*}{1}
+\setheadfoot{\onelineskip}{2\onelineskip}
+\setheaderspaces{*}{5mm}{*}
+\checkandfixthelayout[nearest]
+\fixpdflayout
+
 \begin{document}
 
-\frontmatter
-\input{titlefront}
-\tableofcontents
+%\renewcommand{\printtoctitle}[1]{\chapter*{#1}}
+\renewcommand\contentsname{Содержание}
 
-\mainmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+\pagenumbering{arabic}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{titlefront}
+\cleardoublepage
+
+\settypeblocksize{*}{160mm}{*}
+\setlrmargins{*}{*}{1}
+\setulmarginsandblock{43mm}{28mm}{*}
+\setheadfoot{\onelineskip}{2\onelineskip}
+\setheaderspaces{27mm}{*}{*}
+\checkandfixthelayout[nearest]
+\fixpdflayout
+
+\tableofcontents*
+
 \input{chapter/intro}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+\savepagenumber
+\mainmatter
+\restorepagenumber
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \input{chapter/basics}
 
 \begin{zztaskchapters}
   \input{chapter/autumn}
 \end{zztaskchapters}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \input{appendix/setup}
 \input{appendix/style}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \backmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \input{biblio}
+
+\cleardoublepage
+
+\settypeblocksize{240mm}{160mm}{*}
+\setlrmargins{*}{*}{1}
+\setulmargins{*}{*}{1}
+\setheadfoot{\onelineskip}{2\onelineskip}
+\setheaderspaces{*}{5mm}{*}
+\checkandfixthelayout[nearest]
+\fixpdflayout
+
 \input{titleback}
 
 \end{document}
