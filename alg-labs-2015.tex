@@ -1,10 +1,10 @@
 \input{preamble}
 
-\settypeblocksize{240mm}{160mm}{*}
+\settypeblocksize{*}{160mm}{*}
 \setlrmargins{*}{*}{1}
-\setulmargins{*}{*}{1}
+\setulmarginsandblock{43mm}{28mm}{*}
 \setheadfoot{\onelineskip}{2\onelineskip}
-\setheaderspaces{*}{5mm}{*}
+\setheaderspaces{27mm}{*}{*}
 \checkandfixthelayout[nearest]
 \fixpdflayout
 
@@ -18,16 +18,7 @@
 \pagenumbering{arabic}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{titlefront}
-\cleardoublepage
-
-\settypeblocksize{*}{160mm}{*}
-\setlrmargins{*}{*}{1}
-\setulmarginsandblock{43mm}{28mm}{*}
-\setheadfoot{\onelineskip}{2\onelineskip}
-\setheaderspaces{27mm}{*}{*}
-\checkandfixthelayout[nearest]
-\fixpdflayout
+\setcounter{page}{3}
 
 \tableofcontents*
 
@@ -58,17 +49,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{biblio}
-
-\cleardoublepage
-
-\settypeblocksize{240mm}{160mm}{*}
-\setlrmargins{*}{*}{1}
-\setulmargins{*}{*}{1}
-\setheadfoot{\onelineskip}{2\onelineskip}
-\setheaderspaces{*}{5mm}{*}
-\checkandfixthelayout[nearest]
-\fixpdflayout
-
-\input{titleback}
 
 \end{document}
