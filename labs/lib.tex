@@ -8,10 +8,11 @@
 из двух проектов:
 %
 \begin{enumerate}
-\item Библиотека \texttt{xxx.lib}, которая собирается из \texttt{xxx.c}
-      и \texttt{xxx.h}.
-\item Консольное приложение \texttt{xxxtest.exe}, которое собирается из
-      \texttt{xxxtest.c} с использованием \texttt{xxx.h} и \texttt{xxx.lib}.
+\item Библиотека \texttt{xxx}: создаётся \texttt{xxx.lib},
+      которая собирается из \texttt{xxx.c} и \texttt{xxx.h}.
+\item Консольное приложение \texttt{xxxtest}: создаётся \texttt{xxxtest.exe},
+      которое собирается из \texttt{xxxtest.c}
+      с использованием \texttt{xxx.h} и \texttt{xxx.lib}.
 \end{enumerate}
 
 Исходный текст библиотеки (заголовочный файл) должен содержать комментарии для
@@ -87,6 +88,21 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{zztask}[Нечёткая логика]
+В рамках общего условия задачи ввести новый тип <<нечёткий bool>>
+(\texttt{fool\_t}) на основе значения типа \texttt{double} и реализовать
+функциональность:
+%
+\begin{itemize}
+\item FromInt, FromDouble, AsInt, AsDouble;
+\item Parse, Format, Read, Write, в формате $\mathit{fool}(a)$;
+\item And, Or, Not: конъюнкция, дизъюнкция, отрицание;
+\item Compare;
+\end{itemize}
+\end{zztask}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{zztask}[Рациональные дроби]
 В рамках общего условия задачи ввести новый тип <<несократимая рациональная
 дробь>> (\texttt{rational\_t}) на основе значений \texttt{num}, \texttt{den}
@@ -144,21 +160,6 @@
 \item FromDouble: по центру и радиусу; FromRange, AsDouble, GetRadius;
 \item Parse, Format, Read, Write, в формате $[a, b]$;
 \item Add, Sub, Mul, Div, Negate, Abs;
-\item Compare;
-\end{itemize}
-\end{zztask}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{zztask}[Нечёткая логика]
-В рамках общего условия задачи ввести новый тип <<нечёткий bool>>
-(\texttt{fool\_t}) на основе значения типа \texttt{double} и реализовать
-функциональность:
-%
-\begin{itemize}
-\item FromInt, FromDouble, AsInt, AsDouble;
-\item Parse, Format, Read, Write, в формате $\mathit{fool}(a)$;
-\item And, Or, Not: конъюнкция, дизъюнкция, отрицание;
 \item Compare;
 \end{itemize}
 \end{zztask}
