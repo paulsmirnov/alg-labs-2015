@@ -89,8 +89,8 @@ TODO
 <<\texttt{The good and the EVIL ones.}>>
 должно получиться
 <<\texttt{The, good, and, the, EVIL, ones}>>.
-
-Прототип: \mintinline{c}|char* ExtractWords(char const* str);|
+%
+Прототип: \mint{c}|char* ExtractWords(char const* str);|
 \end{zztask}
 
 \begin{zztask}[Выбор уникальных слов]
@@ -101,9 +101,8 @@ TODO
 <<\texttt{The good and the EVIL ones.}>>
 должно получиться
 <<\texttt{The, good, and, EVIL, ones}>>.
-
-
-Прототип: \mintinline{c}|char* UniqueWords(char const* str);|
+%
+Прототип: \mint{c}|char* UniqueWords(char const* str);|
 \end{zztask}
 
 \begin{zztask}[Выбор букв]
@@ -114,8 +113,8 @@ TODO
 <<\texttt{The evil.}>>
 должно получиться
 <<\texttt{T, h, e, e, v, i, l}>>.
-
-Прототип: \mintinline{c}|char* ExtractLetters(char const* str);|
+%
+Прототип: \mint{c}|char* ExtractLetters(char const* str);|
 \end{zztask}
 
 \begin{zztask}[Выбор уникальных букв]
@@ -126,8 +125,8 @@ TODO
 <<\texttt{The evil.}>>
 должно получиться
 <<\texttt{T, h, e, v, i, l}>>.
-
-Прототип: \mintinline{c}|char* UniqueLetters(char const* str);|
+%
+Прототип: \mint{c}|char* UniqueLetters(char const* str);|
 \end{zztask}
 
 \begin{zztask}[Поиск зеркальных подстрок]
@@ -139,8 +138,8 @@ TODO
 <<\texttt{Ah, Satan sees Natasha!}>>
 должно получиться
 <<\texttt{AhSatansees}>>.\zztodo{Такое должно быть? Я вообще правильно понял?}
-
-Прототип: \mintinline{c}|char* FindMirror(char const* str);|
+%
+Прототип: \mint{c}|char* FindMirror(char const* str);|
 \end{zztask}
 
 \begin{zztask}[Упрощённый поиск по маске]
@@ -150,8 +149,8 @@ TODO
 содержать буквы, цифры и ровно один знак \verb|'*'|, обозначающий совпадение с любой
 последовательностью букв, в том числе и пустой (\verb|"c*p"| даёт совпадение с
 \textit{cp, cap, clip, creep\dots}).
-
-Прототип: \mintinline{c}|char* FindMaskWords(char const* str, char const* mask);|
+%
+Прототип: \mint{c}|char* FindMaskWords(char const* str, char const* mask);|
 \end{zztask}
 
 \begin{zztask}[Поиск по маске]
@@ -161,8 +160,8 @@ TODO
 содержать буквы, цифры и знаки \verb|'*'|, обозначающие совпадение с любой
 последовательностью букв, в том числе и пустой (\verb|"c*p*"| даёт
 \textit{cp, cap, clip, couple, champion\dots}).
-
-Прототип: \mintinline{c}|char* FindMaskWords(char const* str, char const* mask);|
+%
+Прототип: \mint{c}|char* FindMaskWords(char const* str, char const* mask);|
 \end{zztask}
 
 \begin{zztask}[Поиск цепочек]
@@ -176,8 +175,8 @@ TODO
 <<\texttt{This is the ordinary password}>>
 должно получиться
 <<\texttt{This, passwordinary}>>.
-
-Прототип: \mintinline{c}|char* FindChains(char const* str);|
+%
+Прототип: \mint{c}|char* FindChains(char const* str);|
 \end{zztask}
 
 \begin{zztask}[Школоло строки]\zztodo{ПЛОХО ОПРЕДЕЛЁННАЯ ЗАДАЧА}
@@ -189,8 +188,8 @@ TODO
 Пример:
 \verb|AJIEIIIA| (<<Алёша>>), \verb|HAPyIIIuTEJIb 3AKOHA|
 (<<нарушитель закона>>), \verb!>|<uBOTHOE! (<<животное>>).
-
-Прототип: \mintinline{c}|char* ConvertShkololo(char const* str);|
+%
+Прототип: \mint{c}|char* ConvertShkololo(char const* str);|
 \end{zztask}
 
 \begin{zztask}[Транслитерация строк]
@@ -203,8 +202,8 @@ TODO
 Пример:
 \texttt{Alyosha} (<<Алёша>>), \texttt{narushitel{'} zakona}
 (<<нарушитель закона>>), \texttt{zhivotnoye} (<<животное>>).
-
-Прототип: \mintinline{c}|char* ConvertRussian(char const* str);|
+%
+Прототип: \mint{c}|char* ConvertRussian(char const* str);|
 \end{zztask}
 
 \begin{zztask}[Перенос текста]
@@ -220,8 +219,9 @@ TODO
 <<\texttt{The abomination was                funny.}>>
 должно получиться
 <<\texttt{The \\abomination\\was funny.}>>.
-
-Прототип: \mintinline{c}|char* FormatText(char const* str, int width);|
+%
+Прототип:
+ \mint{c}|char* FormatText(char const* str, int width);|
 \end{zztask}
 
 \begin{zztask}[Выравнивание текста]
@@ -233,6 +233,7 @@ TODO
 Делать это надо за счет изменения числа подряд идущих пробелов. Слова
 разбивать нельзя. Короткие строки надо дополнять словами со следующей
 строки, а слишком длинные слова переносить целиком на следующую.\zztodo{Тут к условию много вопросов, могут ли пробелы быть в начале или конце строки? Если слова нельзя бить, то что делать, если они длиннее строки?}
-
-Прототип: \mintinline{c}|char* JustifyText(char const* str, int width);|
+%
+Прототип: 
+\mint{c}|char* JustifyText(char const* str, int width);|
 \end{zztask}
