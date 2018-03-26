@@ -2,6 +2,23 @@
 \zztaskgroup{CUR}{Самоподобные (фрактальные) кривые}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\def\zzfracdot#1{\fill (#1) circle (0.06cm); \fill[white] (#1) circle (0.03cm);}
+\def\zzfracdots#1{\foreach \x in {#1} {\zzfracdot{\x}}}
+\def\zzfracskip{\hskip0.1cm}
+
+\newenvironment{zzfrac}[1]{
+\begin{tikzpicture}[scale=1.2,
+very thick/.style={line width=0.06cm},
+thick/.style={line width=0.03cm}
+]
+\draw[thin] (-0.5,-0.5) rectangle (1.5,1.5);
+\draw (0.5,-0.5) node[above] {#1};
+}{
+\end{tikzpicture}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %Графические программы пишутся в среде Borland C с использованием BGI-графики.
 %Режим обычный (автоопределяемый), 640х480 (VGAHI), 16 цветов. При желании можно 
 %использовать режим 640х350 (VGAMED), позволяющий иметь 2 видеостраницы.
