@@ -5,7 +5,7 @@ int ReadArray(int a[], int n)
 {
   int i;
   for (i = 0; i < n; i++)
-    if (!scanf("%i", &a[i]) || a[i] == 0)
+    if (scanf("%i", &a[i]) != 1 || a[i] == 0)
       break;
   return i;
 }
