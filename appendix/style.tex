@@ -65,8 +65,7 @@ if (c == 1)
   a = 5, b = sin(a);
 
 // нужно так:
-if (c == 1)
-{
+if (c == 1) {
   a = 5;
   b = sin(a);
 }
@@ -90,8 +89,7 @@ if (x < 0)
 int even(int x) { return x % 2 == 0; }
 
 // нужно так:
-int even(int x)
-{
+int even(int x) {
   return x % 2 == 0;
 }
 \end{minted}
@@ -104,7 +102,7 @@ int even(int x)
 \begin{minted}{c}
 // так нельзя:
  float g;
-   g = sin(x);
+       g = sin(x);
 return g;
 
 // нужно так:
@@ -130,8 +128,7 @@ for (j = 1; j < 5; j++)
 }
 
 // нужно так:
-void f(int* x)
-{
+void f(int* x) {
   for (i = 1; i < 5; i++)
     for (j = 1; j < 5; j++)
       *(x++) = i - j;
@@ -140,25 +137,24 @@ void f(int* x)
 
 \zzstyleitem
 
-Длинные строки (\textgreater{}80 символов) должны разбиваться в
+Длинные строки (\textgreater{}100 символов) должны разбиваться в
 логически обоснованных местах на несколько строк, при этом продолжения
 выделяются отступом в 4 пробела вместо двух.
 
 \zzstyleitem
 
-Метки \texttt{case} выравниваются по той же колонке что и команда
+Метки \texttt{case} выравниваются с дополнительным отступом в команде
 \texttt{switch}.
 
 \begin{minted}{c}
 // нужно так:
-switch (a)
-{
-case 1:
-  b = c * 2;
-  break;
-case 2:
-  b = c * c + 3;
-  break;
+switch (a) {
+  case 1:
+    b = c * 2;
+    break;
+  case 2:
+    b = c * c + 3;
+    break;
 }
 \end{minted}
 
@@ -170,31 +166,28 @@ case 2:
 
 \zzstyleitem
 
-Фигурные скобки, выделяющие тело функции или составной команды,
-располагаются каждая на отдельной строке, в одной колонке с началом
-заголовка функции или команды, ровно одна под другой.
+Открывающаяся фигурная скобка, которая выделяет тело функции или составной команды,
+располагается в конце соответствующей строки, а закрывающая~--- в одной колонке
+с началом заголовка функции или команды.
 
 \begin{minted}{c}
 // так нельзя:
-int square(int x) {
+int square(int x)
+{
   return x * x; 
 }
 
 // нужно так:
-int square(int x)
-{
+int square(int x) {
   return x * x;
 }
 
 // так нельзя:
 while (n > 1)
-  {
-    res *= n--;
-  }
+{res *= n--;}
 
 // нужно так:
-while (n > 1)
-{
+while (n > 1) {
   res *= n--;
 }
 \end{minted}
@@ -202,7 +195,7 @@ while (n > 1)
 \zzstyleitem
 
 Фигурные скобки, выделяющие тело команды \texttt{do-while},
-располагаются одна под другой в той же колонке, что и слово \texttt{do}.
+располагаются аналогично.
 Слово \texttt{while} помещается на одной строке с закрывающей фигурной
 скобкой, отделяясь от нее одним пробелом.
 
@@ -215,8 +208,7 @@ do
 while (i > 0);
 
 // нужно так:
-do
-{
+do {
   ...
 } while (i > 0);
 \end{minted}
@@ -228,17 +220,14 @@ do
 избегать.
 
 \begin{minted}{c}
-// так нельзя:
-switch (a)
-{
-case 1:
-  {
+// так можно в случае необходимости:
+switch (a) {
+  case 1:
     b = c * 2;
     break;
-  }
-case 2:
-  {
-    b = c * c + 3;
+  case 2: {
+    int a = c + 1;
+    b = a * a + 3;
     break;
   }
 }
@@ -259,7 +248,7 @@ case 2:
 
 Знаки бинарных операций отделяются от обоих своих аргументов одним
 пробелом (слева и справа): \texttt{a\ +\ b}, \texttt{count\ =\ 3},
-\texttt{x\ \textgreater{}=\ 0}.
+\texttt{x~\textgreater{}=~0}.
 
 \zzstyleitem
 
@@ -271,7 +260,7 @@ case 2:
 Круглые скобки в командах \texttt{if}, \texttt{while}, \texttt{for},
 \texttt{switch} и т.д. отделяются от самих операторов одним пробелом,
 прижимаясь к содержимому. Круглые скобки в команде \texttt{return} не
-ставятся: \texttt{if\ (a\ \textless{}\ 0)}, \texttt{switch\ (bitCount)},
+ставятся:\\\texttt{if\ (a\ \textless{}\ 0)}, \texttt{switch\ (bitCount)},
 \texttt{return\ a\ +\ b}.
 
 \zzstyleitem
@@ -279,12 +268,12 @@ case 2:
 Знаки пунктуации \texttt{,} и \texttt{;} (запятая и точка с запятой) в
 списках параметров, в описаниях переменных, в заголовке цикла
 \texttt{for} прижимаются влево, а от правой части отделяются одним
-пробелом: \texttt{float\ a,\ b,\ c;},
+пробелом: \texttt{float\ a,\ b,\ c;} и
 \texttt{for\ (i\ =\ 0;\ i\ \textless{}\ 5;\ i++)}.
 
 \zzstyleitem
 
-Операция \texttt{,} (запятая) как и знак пунктуации прижимается к левому
+Операция \texttt{,} (запятая) как и знаки пунктуации прижимается к левому
 аргументу и отделяется от правого одним пробелом:
 \texttt{i\ =\ 5,\ j\ =\ 0}.
 
@@ -353,7 +342,7 @@ case 2:
 
 Локальные для файла, но глобальные по отношению к функциям данного
 модуля (т.е., \texttt{static}) переменные предваряются префиксом
-\texttt{s\_}. Пример: \linebreak \texttt{s\_wordCount}.
+\texttt{s\_}. Пример: \texttt{s\_wordCount}.
 
 \zzstyleitem
 
@@ -369,8 +358,7 @@ case 2:
 
 \begin{minted}{c}
 // нужно так:
-typedef struct list_element_t
-{
+typedef struct list_element_t {
   int id;
   block_type_t type;
   struct list_element_t* next;
@@ -386,8 +374,7 @@ typedef struct list_element_t
 
 \begin{minted}{c}
 // нужно так:
-typedef enum
-{
+typedef enum {
   BLOCKSTATE_FREE = 0,
   BLOCKSTATE_OCCUPIED = 1,
   BLOCKSTATE_ILLEGAL = -1,
@@ -422,7 +409,7 @@ typedef enum
 
 \zzstyleitem
 
-В программах на Си для удобства разрешены однострочные Си++ Комментарии,
+В программах на Си для удобства разрешены однострочные Си++ комментарии,
 начинающиеся с \texttt{//}.
 
 \zzstyleitem
@@ -436,7 +423,7 @@ typedef enum
 \zzstyleitem
 
 Комментарий такого вида должен объяснять не столько \textbf{как} что-то
-делается, сколько \textbf{что} (очень краткая сводка блока кода),
+делается, сколько \textbf{что} (очень краткая сводка блока кода), и, в первую очередь,
 \textbf{для чего} и \textbf{почему так} делается (если решение может
 показаться кому-либо неочевидным или даже неверным).
 

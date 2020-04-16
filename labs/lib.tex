@@ -73,13 +73,14 @@
 
 
 \begin{zztask}[Комплексные числа]
-В рамках общего условия задачи ввести новый тип <<комплексное число>>
+В рамках общего условия задачи ввести новый прозрачный тип <<комплексное число>>
 (\texttt{complex\_t}) на основе значений \texttt{re}, \texttt{im} типа
 \texttt{double} и реализовать функциональность:
 %
 \begin{itemize}
+\item константа ZERO;
 \item Create;
-\item Parse, Format, Read, Write, в формате $(a, b)$;
+\item Parse, Format, Read, Write, в формате \verb|"(1, -0.5)"|;
 \item Add, Sub, Mul, Div, Negate, Reciprocal;
 \item Abs, Arg: модуль, аргумент;
 \item Conjugate: сопряжение;
@@ -89,13 +90,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{zztask}[Нечёткая логика]
-В рамках общего условия задачи ввести новый тип <<нечёткий bool>>
+В рамках общего условия задачи ввести новый прозрачный тип <<fuzzy bool>>
 (\texttt{fool\_t}) на основе значения типа \texttt{double} и реализовать
 функциональность:
 %
 \begin{itemize}
 \item FromInt, FromDouble, AsInt, AsDouble;
-\item Parse, Format, Read, Write, в формате $\mathit{fool}(a)$;
+\item Parse, Format, Read, Write, в формате \verb|"fool[0.25]"|;
 \item And, Or, Not: конъюнкция, дизъюнкция, отрицание;
 \item Compare;
 \end{itemize}
@@ -104,96 +105,96 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{zztask}[Рациональные дроби]
-В рамках общего условия задачи ввести новый тип <<несократимая рациональная
+В рамках общего условия задачи ввести новый прозрачный тип <<несократимая рациональная
 дробь>> (\texttt{rational\_t}) на основе значений \texttt{num}, \texttt{den}
 типа \texttt{int} и реализовать функциональность (не забывая сокращать дробь):
 %
 \begin{itemize}
+\item константа ZERO;
 \item Create; \textit{FromDouble}${}^{(\ast)}$, AsDouble, AsInt;
-\item Parse, Format, Read, Write, в формате $a\backslash b$;
+\item Parse, Format, Read, Write, в формате \verb|"-2\3"|;
 \item Add, Sub, Mul, Div, Negate, Reciprocal, Abs;
-\item Round, Floor, Ceil: округления;
-\item Compare;
+\item Round, Floor, Ceil: округления; Compare;
 \end{itemize}
 \end{zztask}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{zztask}[Вещественные числа с фиксированной точкой]
-В рамках общего условия задачи ввести новый тип <<с фиксированной точкой>>
+В рамках общего условия задачи ввести новый прозрачный тип <<с фиксированной точкой>>
 (\texttt{fixed\_t}) на основе типа \texttt{int} (напр., 32 бита как 16:16) и
 реализовать функциональность:
 %
 \begin{itemize}
+\item константа ZERO;
 \item FromInt, FromDouble, AsInt, AsDouble;
-\item Parse, Format, Read, Write;
+\item Parse, Format, Read, Write, в формате \verb|"Fix[-12.75]"|;
 \item Add, Sub, Mul, Div, Negate, Reciprocal, Abs;
-\item Round, Floor, Ceil: округления;
-\item Compare;
+\item Round, Floor, Ceil: округления; Compare;
 \end{itemize}
 \end{zztask}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{zztask}[Длинные целые числа]
-В рамках общего условия задачи ввести новый 18-значный тип <<очень длинный>>
+В рамках общего условия задачи ввести новый прозрачный 18-значный тип <<очень длинный>>
 (\texttt{verylong\_t}) на основе двух значений \texttt{hi}, \texttt{lo} типа
 \texttt{long} (в каждом хранить по 9 десятичных цифр, в старшем числе знак) и
 реализовать функциональность:
 %
 \begin{itemize}
+\item константа ZERO;
 \item FromLong, AsLong;
 \item Parse, Format, Read, Write;
-\item Add, Sub, Mul, Div, Negate, Abs;
-\item Compare;
+\item Add, Sub, Mul, Div, Negate, Abs; Compare;
 \end{itemize}
 \end{zztask}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{zztask}[Приближённые вещественные числа]
-В рамках общего условия задачи ввести новый тип <<приближённое число>>
+В рамках общего условия задачи ввести новый прозрачный тип <<приближённое число>>
 (\texttt{approx\_t}) на основе двух значений \texttt{lo}, \texttt{hi} типа
 \texttt{double} и реализовать функциональность:
 %
 \begin{itemize}
 \item FromDouble: по центру и радиусу; FromRange, AsDouble, GetRadius;
-\item Parse, Format, Read, Write, в формате $[a, b]$;
-\item Add, Sub, Mul, Div, Negate, Abs;
-\item Compare;
+\item Parse, Format, Read, Write, в формате \verb|"<0.75; 1.25>"|;
+\item Add, Sub, Mul, Div, Negate, Abs; Compare;
 \end{itemize}
 \end{zztask}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{zztask}[Матрицы $2\times 2$]
-В рамках общего условия задачи ввести новый тип <<матрица $2\times 2$>>
+В рамках общего условия задачи ввести новый прозрачный тип <<матрица $2\times 2$>>
 (\texttt{matrix22\_t}) на основе значений \texttt{a}, \texttt{b}, \texttt{c},
 \texttt{d} типа \texttt{double} и реализовать функциональность:
 %
 \begin{itemize}
+\item константы ZERO, IDENTITY;
 \item SetZero, SetIdentity: заполнение как нулевой и единичной;
-\item Parse, Format, Read, Write, в формате $\{\{a,b,c,d\}\}$;
+\item Parse, Format, Read, Write,\\ в формате \verb|"{{1, 0}, {-3.5, 1}}"|;
 \item Add, Sub, Mul, MulDouble;
 \item Determinant, Trace, Inverse, Transpose;
-\item ELEMENT: макрокоманда доступа к элементу $A_{ij}$;
+\item Element: доступ к элементу $A_{ij}$;
 \end{itemize}
 \end{zztask}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{zztask}[Матрицы произвольного размера]
-В рамках общего условия задачи ввести новый тип <<матрица>>
+В рамках общего условия задачи ввести новый непрозрачный тип <<матрица>>
 (\texttt{matrix\_t}) на основе значений типа \texttt{double} и реализовать
 функциональность:
 %
 \begin{itemize}
 \item Create, Destroy: в динамической памяти;
 \item SetZero, SetIdentity: заполнение как нулевой и единичной;
-\item Parse, Format, Read, Write, в формате $\{\{a,b\},\{c,d\}\}$;
+\item Parse, Format, Read, Write,\\ в формате \verb|"{{1, 0}, {-3.5, 1}}"|;
 \item Add, Sub, Mul, MulDouble;
 \item \textit{Determinant}${}^{(\ast)}$, Trace, \textit{Inverse}${}^{(\ast)}$, Transpose;
-\item ELEMENT: макрокоманда доступа к элементу $A_{ij}$;
+\item Element: доступ к элементу $A_{ij}$;
 \end{itemize}
 %
 Примечание: в качестве типа рекомендуется использовать структуру с тремя
@@ -204,21 +205,67 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{zztask}[Многочлены]
-В рамках общего условия задачи ввести новый тип <<многочлен>>
+В рамках общего условия задачи ввести новый непрозрачный тип <<многочлен>>
 (\texttt{poly\_t}) на основе значений типа \texttt{int} и реализовать
 функциональность:
 %
 \begin{itemize}
 \item Create, Destroy: по массиву, в динамической памяти;
 \item From: по N коэффициентам, с переменным числом аргументов;
-\item Parse, Format, Read, Write, в формате $2x^3 - 5x + 7$;
+\item Parse, Format, Read, Write, в формате \verb|"2x^3 - 5x + 7"|;
 \item Add, Sub, Mul, MulInt; Evaluate: вычислить в точке;
-\item ELEMENT: макрокоманда доступа к элементу $A_{i}$;
+\item Element: доступ к элементу $A_{i}$;
 \end{itemize}
 %
 Примечание: в качестве типа можно использовать структуру с двумя полями,
 хранящими степень многочлена и указатель на выделенную память под
 коэффициенты.
+\end{zztask}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{zztask}[Векторы в 2D]
+В рамках общего условия задачи ввести новый прозрачный тип <<вектор на плоскости>>
+(\texttt{vec2\_t}) на основе значений \texttt{x}, \texttt{y}
+типа \texttt{double} и реализовать функциональность:
+%
+\begin{itemize}
+\item константы ZERO, UNIT\_X, UNIT\_Y;
+\item Parse, Format, Read, Write, в формате \verb|"{1.5, -3.5}"|;
+\item Add, Sub, MulDouble, Negate, Length, Normalize;
+\item Dot, Cross: скалярное и векторное умножение;
+\item TurnLeft, TurnRight, Rotate: повороты на $90^\circ$ и на произвольный угол;
+\end{itemize}
+\end{zztask}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{zztask}[Строки]
+В рамках общего условия задачи ввести новый непрозрачный тип <<динамическая строка>>
+(\texttt{string\_t}) и реализовать функциональность:
+%
+\begin{itemize}
+\item Create, Destroy: по Си-строке, в динамической памяти;
+\item Parse, ParseWord, Read, ReadWord, Write: отдельно чтение до перевода строки и до пробельного символа;
+\item Length, Copy, Append, Compare,\dots;
+\item Element: доступ к элементу $S_{i}$;
+\end{itemize}
+\end{zztask}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{zztask}[Вещественные числа с десятичной точкой]
+В рамках общего условия задачи ввести новый прозрачный тип <<с фиксированной точкой>>,
+но не в двоичной, а в десятичной форме (\texttt{fixed10\_t}), на основе типа \texttt{int}
+с двумя десятичными знаками после точки и реализовать функциональность:
+%
+\begin{itemize}
+\item константа ZERO;
+\item FromInt, FromDouble, AsInt, AsDouble;
+\item Parse, Format, Read, Write, в обычном формате \verb|"Dec[-12.75]"|;
+\item Add, Sub, Mul, Div, Negate, Reciprocal, Abs;
+\item Round, Floor, Ceil: округления; Compare;
+\end{itemize}
 \end{zztask}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
